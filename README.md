@@ -14,7 +14,7 @@ Install Visual Studio recommended plugin for Nx Nx Console: https://marketplace.
 
 ## Create apps inside workspace
 
-**Create**:
+**Create Nest API**:
 ```sh
 # Create an app inside the workspace
 # 1. Install the plugin
@@ -22,6 +22,16 @@ npm install --save-dev @nrwl/nest
 # 2. Install the app
 nx generate @nrwl/nest:app backend-buyback
 ```
+
+**Create Express API**:
+```sh
+# Create an app inside the workspace
+# 1. Install the plugin
+npm install --save-dev @nrwl/express
+# 2. Install the app
+nx generate @nrwl/express:app backend-varva
+```
+
 
 **Run**:
 

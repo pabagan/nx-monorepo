@@ -30,6 +30,9 @@
   "projects": {
     "backend-buyback": {
       "tags": []
+    },
+    "backend-varva": {
+      "tags": []
     }
   }
 }

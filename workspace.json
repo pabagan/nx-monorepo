@@ -50,6 +50,56 @@
           }
         }
       }
+    },
+    "backend-varva": {
+      "root": "apps/backend-varva",
+      "sourceRoot": "apps/backend-varva/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/backend-varva",
+            "main": "apps/backend-varva/src/main.ts",
+            "tsConfig": "apps/backend-varva/tsconfig.app.json",
+            "assets": ["apps/backend-varva/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/backend-varva/src/environments/environment.ts",
+                  "with": "apps/backend-varva/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "backend-varva:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/backend-varva/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/backend-varva"],
+          "options": {
+            "jestConfig": "apps/backend-varva/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
