@@ -1,7 +1,59 @@
 {
   "version": 2,
-  "projects": {},
+  "projects": {
+    "backend-buyback": {
+      "root": "apps/backend-buyback",
+      "sourceRoot": "apps/backend-buyback/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/backend-buyback",
+            "main": "apps/backend-buyback/src/main.ts",
+            "tsConfig": "apps/backend-buyback/tsconfig.app.json",
+            "assets": ["apps/backend-buyback/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/backend-buyback/src/environments/environment.ts",
+                  "with": "apps/backend-buyback/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "backend-buyback:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/backend-buyback/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/backend-buyback"],
+          "options": {
+            "jestConfig": "apps/backend-buyback/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
-  }
+    "defaultCollection": "@nrwl/nest"
+  },
+  "defaultProject": "backend-buyback"
 }
