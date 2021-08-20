@@ -1,19 +1,19 @@
 {
   "version": 2,
   "projects": {
-    "backend-buyback": {
-      "root": "apps/backend-buyback",
-      "sourceRoot": "apps/backend-buyback/src",
+    "backend-project1": {
+      "root": "apps/backend-project1",
+      "sourceRoot": "apps/backend-project1/src",
       "projectType": "application",
       "targets": {
         "build": {
           "executor": "@nrwl/node:build",
           "outputs": ["{options.outputPath}"],
           "options": {
-            "outputPath": "dist/apps/backend-buyback",
-            "main": "apps/backend-buyback/src/main.ts",
-            "tsConfig": "apps/backend-buyback/tsconfig.app.json",
-            "assets": ["apps/backend-buyback/src/assets"]
+            "outputPath": "dist/apps/backend-project1",
+            "main": "apps/backend-project1/src/main.ts",
+            "tsConfig": "apps/backend-project1/tsconfig.app.json",
+            "assets": ["apps/backend-project1/src/assets"]
           },
           "configurations": {
             "production": {
@@ -22,8 +22,8 @@
               "inspect": false,
               "fileReplacements": [
                 {
-                  "replace": "apps/backend-buyback/src/environments/environment.ts",
-                  "with": "apps/backend-buyback/src/environments/environment.prod.ts"
+                  "replace": "apps/backend-project1/src/environments/environment.ts",
+                  "with": "apps/backend-project1/src/environments/environment.prod.ts"
                 }
               ]
             }
@@ -32,38 +32,38 @@
         "serve": {
           "executor": "@nrwl/node:execute",
           "options": {
-            "buildTarget": "backend-buyback:build"
+            "buildTarget": "backend-project1:build"
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/backend-buyback/**/*.ts"]
+            "lintFilePatterns": ["apps/backend-project1/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/backend-buyback"],
+          "outputs": ["coverage/apps/backend-project1"],
           "options": {
-            "jestConfig": "apps/backend-buyback/jest.config.js",
+            "jestConfig": "apps/backend-project1/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
     },
-    "backend-varva": {
-      "root": "apps/backend-varva",
-      "sourceRoot": "apps/backend-varva/src",
+    "backend-project2": {
+      "root": "apps/backend-project2",
+      "sourceRoot": "apps/backend-project2/src",
       "projectType": "application",
       "targets": {
         "build": {
           "executor": "@nrwl/node:build",
           "outputs": ["{options.outputPath}"],
           "options": {
-            "outputPath": "dist/apps/backend-varva",
-            "main": "apps/backend-varva/src/main.ts",
-            "tsConfig": "apps/backend-varva/tsconfig.app.json",
-            "assets": ["apps/backend-varva/src/assets"]
+            "outputPath": "dist/apps/backend-project2",
+            "main": "apps/backend-project2/src/main.ts",
+            "tsConfig": "apps/backend-project2/tsconfig.app.json",
+            "assets": ["apps/backend-project2/src/assets"]
           },
           "configurations": {
             "production": {
@@ -72,8 +72,8 @@
               "inspect": false,
               "fileReplacements": [
                 {
-                  "replace": "apps/backend-varva/src/environments/environment.ts",
-                  "with": "apps/backend-varva/src/environments/environment.prod.ts"
+                  "replace": "apps/backend-project2/src/environments/environment.ts",
+                  "with": "apps/backend-project2/src/environments/environment.prod.ts"
                 }
               ]
             }
@@ -82,20 +82,20 @@
         "serve": {
           "executor": "@nrwl/node:execute",
           "options": {
-            "buildTarget": "backend-varva:build"
+            "buildTarget": "backend-project2:build"
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/backend-varva/**/*.ts"]
+            "lintFilePatterns": ["apps/backend-project2/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/backend-varva"],
+          "outputs": ["coverage/apps/backend-project2"],
           "options": {
-            "jestConfig": "apps/backend-varva/jest.config.js",
+            "jestConfig": "apps/backend-project2/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -137,5 +137,5 @@
   "cli": {
     "defaultCollection": "@nrwl/nest"
   },
-  "defaultProject": "backend-buyback"
+  "defaultProject": "backend-project1"
 }

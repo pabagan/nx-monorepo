@@ -8,7 +8,7 @@ import { numberUtils } from '@circular-ventures/number-utils';
 const app = express();
 
 app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to backend-varva! ' + numberUtils()});
+  res.send({ message: 'Welcome to backend-project2! ' + numberUtils()});
 });
 
 const port = process.env.port || 3333;

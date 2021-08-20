@@ -14,9 +14,9 @@ describe('AppService', () => {
   });
 
   describe('getData', () => {
-    it('should return "Welcome to backend-buyback!"', () => {
+    it('should return "Welcome to backend-project1!"', () => {
       expect(service.getData()).toEqual({
-        message: 'Welcome to backend-buyback!',
+        message: 'Welcome to backend-project1!',
       });
     });
   });

@@ -28,10 +28,10 @@
     ]
   },
   "projects": {
-    "backend-buyback": {
+    "backend-project1": {
       "tags": []
     },
-    "backend-varva": {
+    "backend-project2": {
       "tags": []
     },
     "number-utils": {
